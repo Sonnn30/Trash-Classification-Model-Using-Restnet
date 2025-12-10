@@ -3,6 +3,7 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 import json
+import os
 
 try:
     model = tf.keras.models.load_model(
@@ -122,4 +123,6 @@ demo = gr.Interface(
     description="Unggah foto sampah untuk mengetahui jenisnya dan cara mengolahnya",
 )
 
-demo.launch()
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    demo.launch(server_name="0.0.0.0", server_port=port)
