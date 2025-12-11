@@ -123,6 +123,4 @@ demo = gr.Interface(
     description="Unggah foto sampah untuk mengetahui jenisnya dan cara mengolahnya",
 )
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    demo.launch(server_name="0.0.0.0", server_port=port)
+demo.launch()
